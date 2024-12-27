@@ -1,7 +1,6 @@
 from django.urls import path
+from store.views import CategoryViewSet, BookViewSet, TrainingViewSet, AudiobookViewSet
 from news.views import NewsletterViewSet
-
-from store.views import CategoryViewSet, BookViewSet
 
 urlpatterns = [
     
@@ -32,6 +31,32 @@ urlpatterns = [
     })),
     
     path('books/<int:pk>/', BookViewSet.as_view({
+        'get': 'retrieve',
+        'patch': 'partial_update',
+        'delete': 'destroy'
+    })),
+    
+    path('books/<int:pk>/download/', BookViewSet.as_view({
+        'get': 'download'
+    })),
+    
+    path('trainings/', TrainingViewSet.as_view({
+        'get': 'list',
+        'post': 'create'
+    })),
+    
+    path('trainings/<int:pk>/', TrainingViewSet.as_view({
+        'get': 'retrieve',
+        'patch': 'partial_update',
+        'delete': 'destroy'
+    })),
+    
+    path('audiobooks/', AudiobookViewSet.as_view({
+        'get': 'list',
+        'post': 'create'
+    })),
+    
+    path('audiobooks/<int:pk>/', AudiobookViewSet.as_view({
         'get': 'retrieve',
         'patch': 'partial_update',
         'delete': 'destroy'
