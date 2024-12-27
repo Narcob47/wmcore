@@ -14,7 +14,7 @@ SECRET_KEY = 'django-insecure-gasxq&(!k31)i#v)t03uudzbv@+m@xdkekkt1*-dy29qosu1(#
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*', 'http://localhost:3000', 'http://127.0.0.1:3000', '']
+ALLOWED_HOSTS = ['*', 'http://localhost:3000', 'http://127.0.0.1:3000', 'wmszm.org']
 
 
 # Application definition
@@ -56,6 +56,7 @@ MIDDLEWARE = [
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
     "http://127.0.0.1:3000",
+    "wmszm.org",
 ]
 
 ROOT_URLCONF = 'core.urls'
